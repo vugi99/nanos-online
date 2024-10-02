@@ -1,0 +1,232 @@
+
+
+
+/* Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f11f;
+    border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 72, 0);
+    border-radius: 4px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 72, 0);
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    font-size: medium;
+    font-family: "Dirty Ego";
+    color: white;
+}
+
+body {
+    overflow: hidden;
+}
+
+.hidden {
+    visibility: hidden !important;
+    display: none !important;
+}
+
+
+
+
+
+
+
+.health-bar-container {
+    box-sizing: border-box;
+    top: 35px;
+    right: 50px;
+    width: 200px;
+    height: 20px;
+    padding: 7px;
+    background: rgba(221,221,221,0.5);
+    border-radius: 5px;
+    position: absolute;
+}
+.health-bar {
+    background: #c54;
+    width: 100%;
+    height: 7px;
+    position: relative;
+
+    transition: width .3s linear;
+}
+  
+.hit-health {
+    background: rgba(255,255,255,0.6);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0px;
+
+    transition: width .3s linear;
+}
+
+#health-bar-container-vehicle {
+    top: 65px;
+}
+
+#health-bar-vehicle {
+    background: rgb(33, 18, 255);
+}
+
+
+
+
+.m-cont {
+    position: absolute;
+    bottom: 150px;
+    left: 50px;
+    width: 250px;
+    height: 50px;
+    background-color: green;
+    border-radius: 20px;
+}
+
+.m-img {
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.m-capsule {
+    float: right;
+    text-align: center;
+    font-family: Helvetica;
+    margin-top: 2%;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(0, 161, 0);
+    border-radius: 50px;
+    width: 180px;
+    margin-right: 20px;
+    
+    height: 80%;
+    line-height: 2;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#bank_money_container {
+    background-color: rgb(202, 202, 202);
+    bottom: 80px;
+}
+
+#bank_money_capsule {
+    background-color: rgb(53, 53, 53);
+}
+
+@keyframes lvls_show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes lvls_hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.lvls_container {
+    position: absolute;
+    top: 33px;
+    height: 1%;
+    width: 33%;
+    left: 50%;
+    transform: translate(-50%,0%);
+}
+
+.lvls_show_anim {
+    animation: 1s lvls_show forwards;
+}
+
+.lvls_hide_anim {
+    animation: 3s lvls_hide forwards;
+}
+
+.lvls_bar_bg {
+    height: 100%;
+    width: 85%;
+    background-color: rgba(97, 97, 97, 0.95);
+    border-radius: 20px;
+}
+
+.lvls_bar {
+    left: 0px;
+    height: 100%;
+    width: 10%;
+    background-color: rgb(12, 129, 138);
+    box-shadow: 0px 0px 0px 0px #0C818A;
+    border-radius: 20px;
+}
+
+.lvls_text {
+    font-size: 120%;
+    font-family: "Helvetica";
+    color: rgb(0, 119, 255);
+    text-shadow: 0 0 5px rgba(0, 119, 255, 0.25);
+    width: 13%;
+    float: right;
+    transform: translate(0%,-75%);
+}
+
+@keyframes lvlbar_up {
+    0% {
+        box-shadow: 0px 0px 0px 0px #0C818A;
+        width: var(--bar-target-width-old);
+    }
+    80% {
+        box-shadow: 0px 0px calc(var(--won-blur-px) * 1px)  calc(1px * var(--won-spread-px)) #0C818A;
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px #0C818A;
+        width: var(--bar-target-width);
+    }
+}
+.lvlbar_up_anim {
+    animation: var(--bar-anim-time) lvlbar_up forwards;
+}
+
+@keyframes lvlbar_down {
+    0% {
+        box-shadow: 0px 0px 0px 0px #0C818A;
+        width: var(--bar-target-width-old);
+        background-color: rgb(12, 129, 138);
+    }
+    80% {
+        box-shadow: 0px 0px calc(var(--won-blur-px) * 1px)  calc(1px * var(--won-spread-px)) #0c8a1d;
+        background-color: #0c8a1d;
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px #0C818A;
+        width: var(--bar-target-width);
+        background-color: rgb(12, 129, 138);
+    }
+}
+.lvlbar_down_anim {
+    animation: var(--bar-anim-time) lvlbar_down forwards;
+}
